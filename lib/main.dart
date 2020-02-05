@@ -112,7 +112,7 @@ class _HomeState extends State<Home> {
                 if (snapshot.hasError) {
                   return Center(
                       child: Text(
-                    "Não carregou ;(",
+                    "Não carregou :(",
                     style: TextStyle(color: Colors.amber, fontSize: 25.0),
                     textAlign: TextAlign.center,
                   ));
