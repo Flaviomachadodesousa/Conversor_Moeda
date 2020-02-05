@@ -162,6 +162,6 @@ Widget buildTextField(
       color: Colors.amber,
     ),
     onChanged: f,
-    keyboardType: TextInputType.number,
+    keyboardType: TextInputType.numberWithOptions(decimal: true),
   );
 }
