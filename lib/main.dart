@@ -25,6 +25,8 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  
+  // Controle de entrada do Texto
   final realController = TextEditingController();
   final dollarController = TextEditingController();
   final euroController = TextEditingController();
@@ -34,30 +36,20 @@ class _HomeState extends State<Home> {
   double euro;
   double bitcon;
 
-  void _bitconChange(String text) {
-    if(text.isEmpty){
-      _clearAll();
-      return;
-    }
-    double bitcon = double.parse(text);
-    realController.text = (dollar * this.dollar).toStringAsFixed(2);
-    euroController.text = (dollar * this.dollar / euro).toStringAsFixed(2);
-    dollarController.text = (dollar * this.dollar / bitcon).toStringAsFixed(2);
-  }
-
+  
   void _realChange(String text) {
-    if(text.isEmpty) {
+    if (text.isEmpty) {
       _clearAll();
       return;
     }
     double real = double.parse(text);
-    dollarController.text = (real/dollar).toStringAsFixed(2);
-    euroController.text = (real/euro).toStringAsFixed(2);
-    bitconContoller.text = (real/bitcon).toStringAsFixed(5);
+    dollarController.text = (real / dollar).toStringAsFixed(2);
+    euroController.text = (real / euro).toStringAsFixed(2);
+    bitconContoller.text = (real / bitcon).toStringAsFixed(5);
   }
 
   void _dollarChange(String text) {
-    if(text.isEmpty){
+    if (text.isEmpty) {
       _clearAll();
       return;
     }
@@ -68,7 +60,7 @@ class _HomeState extends State<Home> {
   }
 
   void _euroChange(String text) {
-    if(text.isEmpty){
+    if (text.isEmpty) {
       _clearAll();
       return;
     }
@@ -78,9 +70,19 @@ class _HomeState extends State<Home> {
     bitconContoller.text = (euro * this.euro / bitcon).toStringAsFixed(5);
   }
 
+  void _bitconChange(String text) {
+    if (text.isEmpty) {
+      _clearAll();
+      return;
+    }
+    double bitcon = double.parse(text);
+    realController.text = (dollar * this.dollar).toStringAsFixed(2);
+    euroController.text = (dollar * this.dollar / euro).toStringAsFixed(2);
+    dollarController.text = (dollar * this.dollar / bitcon).toStringAsFixed(2);
+  }
 
 
-  void _clearAll(){
+  void _clearAll() {
     realController.text = "";
     dollarController.text = "";
     euroController.text = "";
@@ -136,9 +138,11 @@ class _HomeState extends State<Home> {
                             buildTextField("Dollar", "US\$", dollarController,
                                 _dollarChange),
                             Divider(),
-                            buildTextField("Euro", "€", euroController, _euroChange),
+                            buildTextField(
+                                "Euro", "€", euroController, _euroChange),
                             Divider(),
-                            buildTextField("BitCoin", "฿", bitconContoller, _bitconChange),
+                            buildTextField(
+                                "BitCoin", "฿", bitconContoller, _bitconChange),
                             Divider(),
                           ]));
                 }
