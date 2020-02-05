@@ -37,7 +37,7 @@ class _HomeState extends State<Home> {
   double bitcon;
 
   void _realChange(String text) {
-    if (text.isEmpty) {
+    if(text.isEmpty){
       _clearAll();
       return;
     }
@@ -48,7 +48,7 @@ class _HomeState extends State<Home> {
   }
 
   void _dollarChange(String text) {
-    if (text.isEmpty) {
+    if(text.isEmpty){
       _clearAll();
       return;
     }
@@ -59,7 +59,7 @@ class _HomeState extends State<Home> {
   }
 
   void _euroChange(String text) {
-    if (text.isEmpty) {
+    if(text.isEmpty){
       _clearAll();
       return;
     }
@@ -70,7 +70,7 @@ class _HomeState extends State<Home> {
   }
 
   void _bitconChange(String text) {
-    if (text.isEmpty) {
+    if(text.isEmpty){
       _clearAll();
       return;
     }
